@@ -1,10 +1,13 @@
-import { ScreenStyles } from "./styles"
+import { TopHeader } from "../../sharedComponents/Header"
+import { DashboardStyles } from "./styles"
 
 export const Dashboard = () => {
 
     return (
         <>
-            <ScreenStyles />
+            <DashboardStyles />
+
+            <TopHeader />
             <h1>Dashboard :)</h1>
         </>
     )
