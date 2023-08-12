@@ -41,9 +41,17 @@ export const GlobalApplicationStyles = createGlobalStyle`
     }
 
     button {
+        cursor: pointer;
+    }
+
+    button, input, select, textarea {
         background: none;
         border: none;
         color: inherit;
-        cursor: pointer;
+        padding: 0.5rem;
+    }
+
+    textarea {
+        padding: 1rem;
     }
 `

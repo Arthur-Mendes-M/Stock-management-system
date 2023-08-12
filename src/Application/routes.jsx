@@ -3,12 +3,10 @@ import { Dashboard } from "../screens/Dashboard";
 import { ProductsLayout } from "../screens/ProductsLayout";
 import { ProductsList } from "../screens/ProductsLayout/Products";
 import { Product } from "../screens/ProductsLayout/Product";
-import { CreateProductForm } from "../sharedComponents/forms/CreateProduct";
-import { UpdateProductForm } from "../sharedComponents/forms/UpdateProduct";
-
 import { getProduct } from "../database/localStorage";
 import { Product_errorBaundary } from "../errorBaundaries/Product";
 import { GenericErrorPage } from "../errorBaundaries/Generic";
+import { ProductForm } from "../sharedComponents/ProductForm";
 
 export const routes = createBrowserRouter([
     {
@@ -28,15 +26,17 @@ export const routes = createBrowserRouter([
                 path: 'product/:productId',
                 element: <Product />,
                 loader: getProduct,
-                errorElement: <Product_errorBaundary />,
+                errorElement: <Product_errorBaundary />
             },
             {
                 path: 'product/create',
-                element: <CreateProductForm />
+                element: <ProductForm action="create"/>
             },
             {
                 path: 'product/:productId/update',
-                element: <UpdateProductForm />
+                element: <ProductForm action="update"/>,
+                loader: getProduct,
+                errorElement: <Product_errorBaundary />
             }
         ]
     }

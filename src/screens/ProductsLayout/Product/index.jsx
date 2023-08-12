@@ -1,9 +1,18 @@
-import { useParams } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 
 export const Product = () => {
-    const { productId } = useParams()
+    const product = useLoaderData()
 
     return (
-        <h1>Product infos {productId}</h1>
+        <>
+            <h1>Produto: {product.name}</h1>
+            <br />
+            <p>{product.id} <br />
+            {product.name}<br />
+            {product.quantity}<br />
+            {product.price}<br />
+            {product.category}<br />
+            {product.description}</p>
+        </>
     )
 }

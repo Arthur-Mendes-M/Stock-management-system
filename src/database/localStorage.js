@@ -2,9 +2,10 @@ export const getLocalData = ({localName}) => {
     const searchResult = localStorage.getItem(localName)
 
     return searchResult ? JSON.parse(searchResult) : null
+}
 
-    // throw new Response('Suspichos', {status: 404})
-    // console.log('Isso esta sendo executado')
+export const saveLocalData = ({localName, data}) => {
+    localStorage.setItem(localName, JSON.stringify(data))
 }
 
 export const getProduct = ({params}) => {
@@ -24,6 +25,41 @@ export const getProduct = ({params}) => {
     return product
 }
 
-export const saveLocalData = ({localName, data}) => {
-    localStorage.setItem(localName, data)
+export const saveProduct = ({product}) => {
+    let allProducts = getLocalData({localName: 'products'}) ?? []
+    allProducts.push(product)
+
+    saveLocalData({localName: 'products', data: allProducts})
+
+    return allProducts
+}
+
+export const updateProduct = ({productId, productData}) => {
+    let allProducts = getLocalData({localName: 'products'})
+    const foundProduct = allProducts.filter(savedProduct => savedProduct.id === productId)[0]
+
+    if(!foundProduct)
+        return null
+
+    const productIndex = allProducts.indexOf(foundProduct)
+
+    const updatedProduct = {
+        ...foundProduct, 
+        ...productData
+    }
+
+    allProducts.splice(productIndex, 1, updatedProduct)
+
+    saveLocalData({localName: 'products', data: allProducts})
+
+    return allProducts
+}
+
+export const removeProduct = ({productId}) => {
+    let allProducts = getLocalData({localName: 'products'})
+    const filteredProducts = allProducts.filter(savedProduct => savedProduct.id !== productId)
+
+    saveLocalData({localName: 'products', data: filteredProducts})
+
+    return filteredProducts
 }

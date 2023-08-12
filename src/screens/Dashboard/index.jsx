@@ -1,4 +1,5 @@
 import { TopHeader } from "../../sharedComponents/Header"
+import { TableContainer } from "../../sharedComponents/Table"
 import { Button } from "../../sharedComponents/buttons/GenericButton"
 import { DashboardStyles } from "./styles"
 
@@ -34,25 +35,23 @@ export const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="tableContainer">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Itens recentes</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
+                    <TableContainer maxheight='350px'>
+                        <thead>
+                            <tr>
+                                <th>Itens recentes</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>Item Y</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <tbody>
+                            <tr>
+                                <td>Item Y</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </TableContainer>
                 </div>
 
                 <div className="container">
@@ -77,76 +76,74 @@ export const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="tableContainer">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Itens acabando</th>
-                                    <th>Qtd.</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
+                    <TableContainer maxheight='350px'>
+                        <thead>
+                            <tr>
+                                <th>Itens acabando</th>
+                                <th>Qtd.</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Item x</td>
-                                    <td>3</td>
-                                    <td>
-                                        <Button action="Ver"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <tbody>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Item x</td>
+                                <td>3</td>
+                                <td>
+                                    <Button action="Ver"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </TableContainer>
                 </div>
             </section>
         </>
