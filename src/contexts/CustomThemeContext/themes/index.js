@@ -4,6 +4,7 @@ export const themes = [
         colors: {
             primary: '#1f1f1f',
             secondary: '#f1f1f1',
+            terciary: '#282A3A',
             extra_blue: '#4477CE'
         }
     },
@@ -12,15 +13,8 @@ export const themes = [
         colors: {
             primary: '#f1f1f1',
             secondary: '#1f1f1f',
+            terciary: '#ffffff',
             extra_blue: '#4477CE'
-        }
-    },
-    {
-        name: 'blue',
-        colors: {
-            primary: '#4477CE',
-            secondary: '#f1f1f1',
-            extra_blue: '#1f1f1f'
         }
     }
 ]

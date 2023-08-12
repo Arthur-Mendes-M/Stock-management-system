@@ -1,4 +1,5 @@
 import { TopHeader } from "../../sharedComponents/Header"
+import { Button } from "../../sharedComponents/buttons/GenericButton"
 import { DashboardStyles } from "./styles"
 
 export const Dashboard = () => {
@@ -18,7 +19,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>XX</h2>
+                                <h2>2</h2>
                             </div>
                         </div>
 
@@ -28,7 +29,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>XX</h2>
+                                <h2>40</h2>
                             </div>
                         </div>
                     </div>
@@ -37,13 +38,18 @@ export const Dashboard = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>X</th>
-                                    <th>X</th>
+                                    <th>Itens recentes</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                {/* <tr></tr> */}
+                                <tr>
+                                    <td>Item Y</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -57,7 +63,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>XX</h2>
+                                <h2>2</h2>
                             </div>
                         </div>
                         <div className="card">
@@ -66,7 +72,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>XX</h2>
+                                <h2>2</h2>
                             </div>
                         </div>
                     </div>
@@ -75,14 +81,69 @@ export const Dashboard = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>X</th>
-                                    <th>X</th>
-                                    <th>X</th>
+                                    <th>Itens acabando</th>
+                                    <th>Qtd.</th>
+                                    <th>Ações</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                {/* <tr></tr> */}
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Item x</td>
+                                    <td>3</td>
+                                    <td>
+                                        <Button action="Ver"/>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
