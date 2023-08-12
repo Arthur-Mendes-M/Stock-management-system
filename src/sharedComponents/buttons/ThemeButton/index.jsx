@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { CustomThemeContext } from "../../../contexts/CustomThemeContext"
+import { defaultTheme } from "../../../contexts/CustomThemeContext/themes"
 
 export const ThemeButton = () => {
     const {themeName, handleTheme} = useContext(CustomThemeContext)
@@ -9,6 +10,8 @@ export const ThemeButton = () => {
     }
 
     return  (
-        <button type="button" onClick={toggleTheme}>Alterar tema para {themeName == 'dark' ? 'claro' : 'escuro'}</button>
+        <button type="button" onClick={toggleTheme}>
+            {themeName == 'light' ? `${defaultTheme.name}` : 'light'}
+        </button>
     )
 }

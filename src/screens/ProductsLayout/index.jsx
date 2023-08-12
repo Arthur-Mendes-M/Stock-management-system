@@ -4,7 +4,7 @@ import { TopHeader } from "../../sharedComponents/Header"
 export const ProductsLayout = () => {
     return (
         <>
-            <TopHeader />
+            <TopHeader pageName='Estoque'/>
             
             <h1>Layout dos produtos</h1>
             <Outlet />

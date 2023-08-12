@@ -6,15 +6,19 @@ import { Product } from "../screens/ProductsLayout/Product";
 import { CreateProductForm } from "../sharedComponents/forms/CreateProduct";
 import { UpdateProductForm } from "../sharedComponents/forms/UpdateProduct";
 
+import { getProduct } from "../database/localStorage";
+import { Product_errorBaundary } from "../errorBaundaries/Product";
+import { GenericErrorPage } from "../errorBaundaries/Generic";
+
 export const routes = createBrowserRouter([
     {
         path: '/',
-        element: <Dashboard />
+        element: <Dashboard />,
+        errorElement: <GenericErrorPage />
     },
     {
         path: 'products',
         element: <ProductsLayout />,
-        // error baundary
         children: [
             {
                 index: true,
@@ -22,7 +26,9 @@ export const routes = createBrowserRouter([
             },
             {
                 path: 'product/:productId',
-                element: <Product />
+                element: <Product />,
+                loader: getProduct,
+                errorElement: <Product_errorBaundary />,
             },
             {
                 path: 'product/create',
