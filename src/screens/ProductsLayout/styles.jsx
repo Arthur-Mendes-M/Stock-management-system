@@ -24,6 +24,6 @@ export const ContentHeader = styled.header`
 `
 
 export const Styled_outlet = styled.section`
-    ${flexbox({j: 'center', g: '2rem'})};
+    ${flexbox({fd: 'column', j: 'center', g: '2rem'})};
     width: 100%;
 `

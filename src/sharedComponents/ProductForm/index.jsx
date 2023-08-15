@@ -3,7 +3,7 @@ import { Button } from "../buttons/GenericButton"
 import { Styled_form } from "./styles"
 import {v4 as uuidv4} from "uuid"
 
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 import { ProductsContext } from "../../contexts/ProductsContext"
 
 const initialInputs = {
@@ -17,6 +17,7 @@ const initialInputs = {
 export const ProductForm = ({action = 'create'}) => {
     const product = useLoaderData()
     const [inputs, setInputs] = useState(() => product ?? initialInputs)
+    const navigate = useNavigate()
 
     const {products, productsDispatch} = useContext(ProductsContext)
 
@@ -32,6 +33,7 @@ export const ProductForm = ({action = 'create'}) => {
     const createProduct = () => {
         const product = {
             id: uuidv4(),
+            date: new Date(),
             ...inputs
         }
 
@@ -42,6 +44,7 @@ export const ProductForm = ({action = 'create'}) => {
     const updateProduct = () => {
         const updatedProduct = {
             ...product,
+            updated: new Date(),
             ...inputs
         }
 
@@ -59,11 +62,14 @@ export const ProductForm = ({action = 'create'}) => {
         switch (action){
             case 'create':
                 createProduct()
+                event.currentTarget.querySelectorAll('input')[0].focus()
                 break
             case 'update':
                 updateProduct()
+                navigate(-1)
                 break
         }
+
     }
 
     return (

@@ -1,9 +1,24 @@
+import { useContext } from "react"
 import { TopHeader } from "../../sharedComponents/Header"
 import { TableContainer } from "../../sharedComponents/Table"
 import { Button } from "../../sharedComponents/buttons/GenericButton"
 import { DashboardStyles } from "./styles"
+import { ProductsContext } from "../../contexts/ProductsContext"
 
 export const Dashboard = () => {
+    const {products, productsDispatch} = useContext(ProductsContext)
+
+    const endingItems = products.filter(product => product.quantity < 10)
+    const inventory = products.reduce((result, product) => result += +product.quantity,0)
+
+    const calcDays = (secondDate) => {
+        const difInMilliseconds = new Date() - new Date(secondDate)
+        const absoluteDif = Math.abs(difInMilliseconds)
+        const difInDays = (absoluteDif / 1000) / 60 / 60 / 24
+        return Math.floor(difInDays)
+    }
+
+    const recentsItems = products.filter(product => calcDays(product.date) <= 10)
 
     return (
         <>
@@ -20,7 +35,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>2</h2>
+                                <h2>{products.length}</h2>
                             </div>
                         </div>
 
@@ -30,7 +45,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>40</h2>
+                                <h2>{inventory}</h2>
                             </div>
                         </div>
                     </div>
@@ -44,12 +59,10 @@ export const Dashboard = () => {
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>Item Y</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
+                            {recentsItems.map((product, index) => <tr key={index}>
+                                <td>{product.name}</td>
+                                <td><Button action="Ver" linkTo={`/products/product/${product.id}`}/></td>
+                            </tr>)}
                         </tbody>
                     </TableContainer>
                 </div>
@@ -62,7 +75,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>2</h2>
+                                <h2>{recentsItems.length}</h2>
                             </div>
                         </div>
                         <div className="card">
@@ -71,7 +84,7 @@ export const Dashboard = () => {
                             </div>
 
                             <div className="content">
-                                <h2>2</h2>
+                                <h2>{endingItems.length}</h2>
                             </div>
                         </div>
                     </div>
@@ -86,62 +99,15 @@ export const Dashboard = () => {
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Item x</td>
-                                <td>3</td>
-                                <td>
-                                    <Button action="Ver"/>
-                                </td>
-                            </tr>
+                            {endingItems.map((item, index) => 
+                                <tr key={index}>
+                                    <td>{item.name}</td>
+                                    <td>{item.quantity}</td>
+                                    <td>
+                                        <Button action="Ver" linkTo={`/products/product/${item.id}`}/>
+                                    </td>
+                                </tr>
+                            )}
                         </tbody>
                     </TableContainer>
                 </div>
