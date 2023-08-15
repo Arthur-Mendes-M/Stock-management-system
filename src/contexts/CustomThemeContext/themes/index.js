@@ -1,3 +1,5 @@
+import { getLocalData } from "../../../database/localStorage"
+
 export const themes = [
     {
         name: 'dark',
@@ -25,4 +27,4 @@ export const searchTheme = ({themeName}) => {
     return searchResult ? searchResult[0] : null
 }
 
-export const defaultTheme = searchTheme({themeName: 'dark'})
+export const defaultTheme = searchTheme({themeName: getLocalData({localName: 'theme'})}) ?? searchTheme({themeName: 'dark'})

@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { defaultTheme, searchTheme } from "./themes";
 import { ThemeProvider } from "styled-components";
+import { saveLocalData } from "../../database/localStorage";
 
 export const CustomThemeContext = createContext()
 
@@ -10,6 +11,7 @@ export const CustomThemeProvider = ({children}) => {
     const handleTheme = ({themeName}) => {
         const foundTheme = searchTheme({themeName})
         
+        saveLocalData({localName: 'theme', data: foundTheme.name})
         foundTheme && setTheme(foundTheme)
     }
 
