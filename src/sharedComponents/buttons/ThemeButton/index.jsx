@@ -11,7 +11,7 @@ export const ThemeButton = () => {
 
     return  (
         <button type="button" onClick={toggleTheme}>
-            {themeName == 'light' ? `${defaultTheme.name}` : 'light'}
+            {themeName == 'light' ? 'Dark' : 'Light'}
         </button>
     )
 }

@@ -3,6 +3,7 @@ import { flexbox } from "../../../Styles";
 
 export const Styled_header = styled.header`
     ${flexbox({g: '2rem', fw: 'wrap'})};
+    width: 100%;
 
     .actions {
         ${flexbox({g: '1rem', fw: 'wrap'})};
@@ -24,4 +25,5 @@ export const Styled_div_tag = styled.div`
 
 export const Styled_section_infos = styled.section`
     ${flexbox({fd: 'column', g: '1rem'})};
+    width: 100%;
 `

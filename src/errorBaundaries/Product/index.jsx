@@ -9,36 +9,36 @@ export const Product_errorBaundary = () => {
             case 404:
                 return (
                     <>
-                        <h1>Algo não foi encontrado</h1>
-                        <p>{error.data}</p>
+                        <h1>🕵️‍♂️ Parece que o que você esta procurando não foi encontrado 🤭</h1>
+                        <p>Mais detalhes sobre o que aconteceu: <span>{error.data}</span></p>
                     </>
                 )
             case 401:
                 return (
                     <>
-                        <h1>Sem autorizações</h1>
-                        <p>{error.data}</p>
+                        <h1>💂‍♀️ Você não possui autorizações de acesso 🤚</h1>
+                        <p>Mais detalhes sobre o que aconteceu: <span>{error.data}</span></p>
                     </>
                 )
             case 400:
                 return (
                     <>
-                        <h1>Algo deu errado na requisição</h1>
-                        <p>{error.data}</p>
+                        <h1>🌐 Me parece que ha de algo errado na requisição 🧐</h1>
+                        <p>Mais detalhes sobre o que aconteceu: <span>{error.data}</span></p>
                     </>
                 )
     
             case 500:
                 return (
                     <>
-                        <h1>Algo deu errado no servidor</h1>
-                        <p>{error.data}</p>
+                        <h1>Eita 😬 Algo deu errado no servidor</h1>
+                        <p>Mais detalhes sobre o que aconteceu: <span>{error.data}</span></p>
                     </>
                 )
         }
     }
 
     return (
-        <h1>Algo deu errado</h1>
+        <h1>Vish 😰 Algo desconhecido causou esse erro 👀</h1>
     )
 }

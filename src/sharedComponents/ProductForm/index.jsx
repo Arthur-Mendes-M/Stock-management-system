@@ -31,13 +31,13 @@ export const ProductForm = ({action = 'create'}) => {
     }
 
     const createProduct = () => {
-        const product = {
+        const newProduct = {
             id: uuidv4(),
             date: new Date(),
             ...inputs
         }
 
-        productsDispatch({type: 'create', data: product})
+        productsDispatch({type: 'create', data: newProduct})
         setInputs(initialInputs)
     }
 
@@ -125,11 +125,11 @@ export const ProductForm = ({action = 'create'}) => {
                     required
                 >
                     <option value="">Selecione uma categoria</option>
-                    <option value="food">Alimento</option>
-                    <option value="cleaning">Produto de limpeza</option>
-                    <option value="automotive">Produto automotivo</option>
-                    <option value="games">Jogos</option>
-                    <option value="books">Livros</option>
+                    <option value="alimento">Alimento</option>
+                    <option value="produto de limpeza">Produto de limpeza</option>
+                    <option value="produto automotivo">Produto automotivo</option>
+                    <option value="jogos">Jogos</option>
+                    <option value="livros">Livros</option>
                 </select>
             </div>
 
