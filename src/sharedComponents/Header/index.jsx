@@ -11,11 +11,11 @@ export const TopHeader = ({pageName}) => {
             <nav>
                 <ul>
                     <Link to='/'>
-                        <li>Home</li>
+                        <li>Dashboard</li>
                     </Link>
 
                     <Link to='/products'>
-                        <li>Products</li>
+                        <li>Produtos</li>
                     </Link>
                 </ul>
 

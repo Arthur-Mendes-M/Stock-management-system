@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useRef, useState } from "react"
 import { Button } from "../buttons/GenericButton"
 import { Styled_form } from "./styles"
 import {v4 as uuidv4} from "uuid"
@@ -15,6 +15,7 @@ const initialInputs = {
 }
 
 export const ProductForm = ({action = 'create'}) => {
+    const firstInputRef = useRef(null)
     const product = useLoaderData()
     const [inputs, setInputs] = useState(() => product ?? initialInputs)
     const navigate = useNavigate()
@@ -62,7 +63,7 @@ export const ProductForm = ({action = 'create'}) => {
         switch (action){
             case 'create':
                 createProduct()
-                event.currentTarget.querySelectorAll('input')[0].focus()
+                firstInputRef.current.focus()
                 break
             case 'update':
                 updateProduct()
@@ -81,7 +82,8 @@ export const ProductForm = ({action = 'create'}) => {
                     name="name" 
                     id="name" 
                     value={inputs.name}
-                    onChange={handleInput} 
+                    onChange={handleInput}
+                    ref={firstInputRef}
                     required
                     autoFocus
                 />
@@ -145,7 +147,14 @@ export const ProductForm = ({action = 'create'}) => {
             </div>
 
             <div className="actions">
-                <Button action="Limpar" type='reset'/>
+                <Button 
+                    action="Limpar" 
+                    type='reset' 
+                    actionOnClick={() => {
+                        setInputs(initialInputs)
+                        firstInputRef.current.focus()
+                    }}
+                />
                 <Button className='info' action="Salvar" type='submit'/>
             </div>
         </Styled_form>
